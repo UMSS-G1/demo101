@@ -67,13 +67,25 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ClassOneCtrl', function($scope){
+.controller('ClassOneCtrl', function($scope, $ionicPopup){
   
 
   $scope.nameGirl = "";
   $scope.lastNameGirl = "";
 
   $scope.today = new Date().getTime();
+
+  $scope.showAlert = showAlert;
+
+  function showAlert(){
+    //alert("Hello!!!!");
+    $ionicPopup.alert({
+      title: "Hola!!!",
+      template: "Como vamos???",
+      okText: "Aceptar",
+      okType: "button-dark"
+    });
+  }
 
   $scope.girls = [
     {
