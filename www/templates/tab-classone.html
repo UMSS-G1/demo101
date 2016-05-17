@@ -1,0 +1,31 @@
+<ion-view title="Class one">
+	<ion-content class="padding">
+
+		<ion-list>
+			<ion-item class="item-avatar" ng-repeat="girl in girls">
+				<img ng-src="{{girl.photo}}" alt="photo">
+				<h2>{{ girl.name }}</h2>
+				<p> {{ girl.age }} </p>
+			</ion-item>
+		</ion-list>
+
+		<button class="button button-block">Click me!!</button>
+		<button class="button button-positive button-block">Click me!!</button>
+		<button class="button button-calm  button-outline button-block">Click me!!</button>
+		<button class="button icon-left ion-camera button-dark">Take a picture</button>
+	<!--
+		<input placeholder="Digite su nombre" type="text" ng-model="name">
+		<hr/>
+		<div ng-show="name != ''">
+			<input  type="number" placeholder="Digite el numero" ng-model="number">
+			<hr/>
+			<div ng-show="number > 0">
+				<button ng-click="add(number)" class="button button-positive">Agregar numeros</button>
+				<hr/>
+				<h3>El resultado es <strong>{{ numbers }}
+			</div>
+			</strong></h3>
+		</div>
+		-->
+	</ion-content>
+</ion-view>
