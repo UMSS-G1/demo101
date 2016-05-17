@@ -1,13 +1,35 @@
 <ion-view title="Class one">
 	<ion-content class="padding">
 
+		<h1>{{ today | date: 'medium' }}</h1>
+
+		<input type="text" placeholder="Por nombre" ng-model="nameGirl">
+
+		<input type="text" placeholder="Por apellido" ng-model="lastNameGirl">
+
 		<ion-list>
-			<ion-item class="item-avatar" ng-repeat="girl in girls">
+			<ion-item class="item-avatar" ng-repeat="girl in girls | filter: { name : nameGirl, lastname: lastNameGirl } | orderBy: '-age'">
 				<img ng-src="{{girl.photo}}" alt="photo">
-				<h2>{{ girl.name }}</h2>
+				<h2>{{ girl.name | uppercase }} {{ girl.lastname }}</h2>
 				<p> {{ girl.age }} </p>
 			</ion-item>
 		</ion-list>
+
+		<p></p>
+
+		<h1>{{ "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia eum, beatae nostrum, praesentium reiciendis rem deleniti ex dolores vel error velit, explicabo enim a id ea illum quis consequatur iure." | limitTo: 50 }}..</h1>
+
+		<h2> {{ 2.34343434232323 | number: 5 }} </h2>
+
+		<h2> {{ "Diana" | chat }} </h2>
+
+		<h2> {{ "Diana" | reverse }} </h2>
+		<h2> {{ "anaiD " | reverse }} </h2>
+
+
+<!--
+		ng-repeat="girl in girls | filter: { name : nameGirl, lastname: lastNameGirl } | orderBy: 'age'"
+-->
 
 		<button class="button button-block">Click me!!</button>
 		<button class="button button-positive button-block">Click me!!</button>

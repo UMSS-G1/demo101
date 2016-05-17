@@ -70,6 +70,11 @@ angular.module('starter.controllers', [])
 .controller('ClassOneCtrl', function($scope){
   
 
+  $scope.nameGirl = "";
+  $scope.lastNameGirl = "";
+
+  $scope.today = new Date().getTime();
+
   $scope.girls = [
     {
       name: "Kattya",
@@ -84,137 +89,29 @@ angular.module('starter.controllers', [])
       photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
     },
     {
-      name: "Camila",
-      lastname: "Becerra",
-      age: 23,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Monica",
-      lastname: "Irene",
-      age: 32,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Kattya",
-      lastname: "Cuevas",
-      age: 21,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Luz",
-      lastname: "Perez",
+      name: "Maria",
+      lastname: "Alejandra",
       age: 26,
       photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
     },
     {
-      name: "Camila",
-      lastname: "Becerra",
+      name: "Danna",
+      lastname: "Paola",
       age: 23,
+      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
+    },
+    {
+      name: "Lea",
+      lastname: "Verou",
+      age: 32,
       photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
     },
     {
       name: "Monica",
       lastname: "Irene",
-      age: 32,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Kattya",
-      lastname: "Cuevas",
       age: 21,
       photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Luz",
-      lastname: "Perez",
-      age: 26,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Camila",
-      lastname: "Becerra",
-      age: 23,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Monica",
-      lastname: "Irene",
-      age: 32,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Kattya",
-      lastname: "Cuevas",
-      age: 21,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Luz",
-      lastname: "Perez",
-      age: 26,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Camila",
-      lastname: "Becerra",
-      age: 23,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Monica",
-      lastname: "Irene",
-      age: 32,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Kattya",
-      lastname: "Cuevas",
-      age: 21,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Luz",
-      lastname: "Perez",
-      age: 26,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Camila",
-      lastname: "Becerra",
-      age: 23,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Monica",
-      lastname: "Irene",
-      age: 32,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Kattya",
-      lastname: "Cuevas",
-      age: 21,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Luz",
-      lastname: "Perez",
-      age: 26,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Camila",
-      lastname: "Becerra",
-      age: 23,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
-    {
-      name: "Monica",
-      lastname: "Irene",
-      age: 32,
-      photo: "http://cdn04.cdn.justjaredjr.com/wp-content/uploads/headlines/2016/02/vanessa-marano-gilmore-girls-interview.jpg"
-    },
+    }
   ];
 
 });
