@@ -42,29 +42,108 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+.controller('ChatsCtrl', function($scope, $ionicModal) {
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+  $scope.rockband = {};
+  $scope.nameRockBand = "";
+
+  $scope.rockbands = [
+    {
+      name: "nirvana",
+      photo: "nirvana.png",
+      type: "rock"
+    },
+    {
+      name: "los prisioneros",
+      photo: "prisioneros.jpg",
+      type: "rock on roll"
+    },
+    {
+      name: "kudai",
+      photo: "kudai.jpg",
+      type: "drama"
+    },
+    {
+      name: "hombres g",
+      photo: "hombresg.jpg",
+      type: "rock"
+    },
+  ];
+
+  $scope.showModal = showModal;
+  $scope.closeModal = closeModal;
+  $scope.saveRockBand = saveRockBand;
+
+  $scope.modal = null;
+
+  $ionicModal.fromTemplateUrl("templates/rockband-modal.html", {
+    scope: $scope
+  })
+  .then(function(modal){
+    $scope.modal = modal;
+  });
+
+  function showModal(){
+    $scope.modal.show();
+  }
+
+  function closeModal(){
+    $scope.modal.hide();
+  }
+
+  function saveRockBand(){
+    $scope.rockband.photo = "nirvana.png";
+    $scope.rockbands.push( $scope.rockband );
+    $scope.rockband = {};
+    $scope.modal.hide();
+  }
+
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+.controller('AccountCtrl', function($scope, $ionicLoading) {
+  
+
+  $ionicLoading.show();
+  setTimeout(function(){
+    $ionicLoading.hide();
+  }, 10000);
+
+  $scope.data = {
+    foods: [
+      {
+        name: "Pizza",
+        check: false
+      },
+      {
+        name: "HotDog",
+        check: true
+      },
+      {
+        name: "Hamburger",
+        check: false
+      },
+      {
+        name: "Papas",
+        check: false
+      },
+    ]
   };
+
+  $scope.saveData = saveData;
+
+  function saveData(){
+    console.log( "Nombre", $scope.data.name );
+    console.log( "Nickname", $scope.data.nickname );
+    console.log( "Comida", $scope.data.foods.filter(item => item.check).map(item => item.name) );
+    console.log( "Genero", $scope.data.gender );
+    console.log( "Vacunado", $scope.data.vacunado);
+    console.log( "Rabia", $scope.data.rabia );
+  }
+
 })
 
 .controller('ClassOneCtrl', function($scope, $ionicPopup){

@@ -1,9 +1,53 @@
 <ion-view view-title="Account">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+  	<!-- Form -->
+    <form ng-submit="saveData()">
+    	<!-- Div.list -->
+    	<div class="list">
+    		<!-- Label name -->
+    		<label class="item item-input item-floating-label">
+    			<span class="input-label">Name:</span>
+    			<input type="text" placeholder="Name:" ng-model="data.name">
+    		</label>
+    		<!-- Label Nickname -->
+    		<label class="item item-input item-floating-label">
+    			<span class="input-label">Nickname:</span>
+    			<input type="text" placeholder="Nickname:" ng-model="data.nickname">
+    		</label>
+    		<!-- Div divider -->
+    		<div class="item-divider">
+    			¿Que comida le gusta?
+    		</div>
+    		<!-- checkboxs -->
+
+
+    		<ion-checkbox ng-repeat="food in data.foods" ng-model="food.check">
+    			{{ food.name }}
+    		</ion-checkbox>
+    		<div class="item-divider">
+    			Genero
+    		</div>
+    		<ion-radio ng-model="data.gender" ng-value="'Hembra'">
+    			Hembra
+    		</ion-radio>
+    		<ion-radio ng-model="data.gender" ng-value="'Macho'">
+    			Macho
+    		</ion-radio>
+    		<div class="item-divider">
+    			Enfermedades
+    		</div>
+    		<ion-toggle ng-model="data.vacunado">
+    			¿Ya esta vacunado?
+    		</ion-toggle>
+    		<ion-toggle ng-model="data.rabia">
+    			¿Ha tenido rabia?
+    		</ion-toggle>
+    	</div>
+
+			<div class="padding">
+				<button type="submit" class="button button-block button-positive">Subir información</button>
+			</div>
+
+    </form>
   </ion-content>
 </ion-view>

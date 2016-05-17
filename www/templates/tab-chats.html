@@ -1,15 +1,23 @@
 <ion-view view-title="Chats">
-  <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
+  <ion-nav-buttons side="right">
+    <button class="button icon ion-plus-circled" ng-click="showModal()"></button>
+  </ion-nav-buttons>
+
+  <ion-content>
+  
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="nameRockBand">
+      </label>
+    </div>
+
+    <ion-list>
+      <ion-item class="item-thumbnail-left" ng-repeat="band in rockbands | filter: {name: nameRockBand}">
+        <img ng-src="/img/rockbands/{{ band.photo }}" alt="photo">
+        <h2>{{ band.name }}</h2>
+        <p>{{ band.type }}</p>
       </ion-item>
     </ion-list>
   </ion-content>
