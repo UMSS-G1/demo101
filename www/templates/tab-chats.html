@@ -14,10 +14,10 @@
     </div>
 
     <ion-list>
-      <ion-item class="item-thumbnail-left" ng-repeat="band in rockbands | filter: {name: nameRockBand}">
+      <ion-item class="item-thumbnail-left" ng-repeat="band in rockbands | filter: {name: nameRockBand} | orderBy: '-year'">
         <img ng-src="/img/rockbands/{{ band.photo }}" alt="photo">
         <h2>{{ band.name }}</h2>
-        <p>{{ band.type }}</p>
+        <p>{{ band.type }} {{ band.year }}</p>
       </ion-item>
     </ion-list>
   </ion-content>

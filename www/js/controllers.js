@@ -51,22 +51,26 @@ angular.module('starter.controllers', [])
     {
       name: "nirvana",
       photo: "nirvana.png",
-      type: "rock"
+      type: "rock",
+      year: 1980
     },
     {
       name: "los prisioneros",
       photo: "prisioneros.jpg",
-      type: "rock on roll"
+      type: "rock on roll",
+      year: 1981
     },
     {
       name: "kudai",
       photo: "kudai.jpg",
-      type: "drama"
+      type: "drama",
+      year: 2002
     },
     {
       name: "hombres g",
       photo: "hombresg.jpg",
-      type: "rock"
+      type: "rock",
+      year: 1990
     },
   ];
 
